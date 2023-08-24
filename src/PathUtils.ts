@@ -170,7 +170,7 @@ export class PathUtils {
      */
     public static getModelUrl(url?: string) {
         // Model path extracted from the given url
-        if (url && url.replace) {
+        if (url?.replace) {
             return this.convertToModelUrl(url);
         }
 
