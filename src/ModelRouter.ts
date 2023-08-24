@@ -166,15 +166,19 @@ export function dispatchRouteChanged(path: string): void {
  */
 export function routeModel(url?: string | undefined | null | URL): void {
     if (!isModelRouterEnabled()) {
+        console.log("!isModelRouterEnabled()");
         return;
     }
 
     const path = getModelPath(url);
+    console.log({path});
+
 
     // don't fetch the model
     // for the root path
     // or when the route is excluded
     if (!path || ('/' === path) || isRouteExcluded(path)) {
+        console.log("Don't fetch");
         return;
     }
 
