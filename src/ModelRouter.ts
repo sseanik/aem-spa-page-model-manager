@@ -146,7 +146,9 @@ export function isModelRouterEnabled(): boolean {
 export function dispatchRouteChanged(path: string): void {
     // Triggering the page model manager to load a new child page model
     // No need to use a cache as the PageModelManager already does it
+    console.log(`Getting path ${path} for dispatchRouteChanged`);
     ModelManager.getData({ path }).then((model) => {
+        console.log(`Got model ${model} after getData`);
         PathUtils.dispatchGlobalCustomEvent(EventType.PAGE_MODEL_ROUTE_CHANGED, {
             detail: {
                 model
