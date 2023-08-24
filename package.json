@@ -24,8 +24,7 @@
   "scripts": {
     "build:production": "NODE_ENV=production npm run build",
     "build:types": "tsc -p src/tsconfig.types.json",
-    "build": "npm run clean && npm run lint && webpack && npm run build:types",
-    "clean": "rm -rf dist/",
+    "build": "npm run lint && webpack && npm run build:types",
     "docs": "npm i && npx typedoc --entryPointStrategy expand --excludePrivate ./src --out ./dist/docs",
     "lint": "eslint .",
     "semantic-release": "semantic-release",
