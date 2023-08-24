@@ -187,7 +187,9 @@ export function routeModel(url?: string | undefined | null | URL): void {
 
 export function initModelRouter(): void {
     // Activate the model router
+    console.log('Init Model Router');
     if (isModelRouterEnabled() && PathUtils.isBrowser()) {
+        console.log('isModelRouterEnabled() && PathUtils.isBrowser()');
         // Encapsulate the history.pushState and history.replaceState functions to prefetch the page model for the current route
         const pushState = window.history.pushState;
         const replaceState = window.history.replaceState;
